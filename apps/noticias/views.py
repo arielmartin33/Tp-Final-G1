@@ -4,7 +4,23 @@ from django.contrib.auth.decorators import login_required
 
 from .models import Noticia, Categoria, Comentario
 
+from .forms import CategoriaForm
+
 from django.urls import reverse_lazy
+
+@login_required
+def Crear_Categoria(request):
+	contexto = {'form': CategoriaForm()}
+
+	if request.method == 'POST':
+		form = CategoriaForm(request.POST)
+		if form.is_valid():
+			form.save()
+			return redirect('noticias:crear_categoria')
+		else:
+			contexto['form'] = form
+
+	return render(request, 'noticias/crear_categoria.html', contexto)
 
 @login_required
 def Listar_Noticias(request):
