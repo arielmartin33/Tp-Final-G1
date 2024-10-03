@@ -7,7 +7,7 @@
 {% block contenido %}
 	<div class="submenu">
 
-		<a href="{% url 'noticias:crear_categoria' %}">Nueva</a>
+		<a href="{% url 'noticias:crear_noticia' %}">Nueva</a>
 		<a href="{% url 'noticias:listar' %}">Todas</a>
 		{% for cat in categorias %}
 			<a href="?id={{cat.pk}}">{{cat.nombre}}</a>
