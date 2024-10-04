@@ -12,6 +12,6 @@ urlpatterns = [
 	
 	path('Comentario/', views.Comentar_Noticia, name = 'comentar'),
     
-	path('Crear/', views.Crear_Categoria, name = 'crear_categoria'),
+	path('Crear/', views.Crear_Noticia, name = 'crear_noticia'),
 	
 ]

@@ -30,14 +30,15 @@ urlpatterns = [
     # 3 ES EL NOMBRE LA URL (aun no lo usamos)
     path('', views.Home, name = 'home'),
     #No necesariamente estos 3 valores (parametors) se deben llamar igual
-    path('Nosotros/', views.Nosotros, name = 'nosotros'),
+    path('nosotros/', views.Nosotros, name = 'nosotros'),
 
     #LOGIN
     path('login/',auth.LoginView.as_view(template_name='usuarios/login.html'),name='login'),
-    path('logout/',auth.LogoutView.as_view(),name="logout"),
+    path('logout/',auth.LogoutView.as_view(template_name='usuarios/logout.html'),name='logout'),
+    path('registro/',auth.LoginView.as_view(template_name='usuarios/registro.html'),name='registro'),
 
     # URL DE APLICACION
-    path('Noticias/', include('apps.noticias.urls')),
-    path('Usuario/',include('apps.usuarios.urls')),
+    path('noticias/', include('apps.noticias.urls')),
+    path('usuario/',include('apps.usuarios.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
