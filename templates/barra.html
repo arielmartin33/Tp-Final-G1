@@ -13,11 +13,18 @@
         <li class="nav-item">
           <a class="nav-link" href="{% url 'nosotros' %}">Nosotros</a>
         </li>
+        {% if user.is_authenticated %}
+        <li class="nav-item"></li>
+          <a class="nav-link" href="{% url 'usuarios:editar'%}">Perfil</a>
+        </li>
+        <li>
+          <h4>{{ user.username }}</h4>
+        </li>
+        {% endif %}
       </ul>
       <ul class="navbar-nav">
         {% if user.is_authenticated %}
         <li class="nav-item">
-            <h3>{{ user.username }}</h3>
             <a class="nav-link" href="{% url 'logout'%}">Salir</a>
         </li>
         {% else %}
