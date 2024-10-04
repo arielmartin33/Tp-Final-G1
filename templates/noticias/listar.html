@@ -14,18 +14,25 @@
 		{% endfor %}
 
 	</div>
-
-	<h1>ACA VOY A LISTAR LAS NOTICIAS</h1>
+	<div class="row">
+		<div class="col-md-6 col-12 mx-md-auto mx-3 mt-5 mb-5">
+			<h1 class="fw-bolder">Noticias del Blog</h1>
+			<h5 class="text-muted">Todas las últimas noticias estan aquí</h5>
+		</div>
+	</div>
 
 	{% for noti in noticias %}
+	<div class="col-md-6 col-12 mx-md-auto mx-3 mt-5 mb-5">
 		<img src="{{noti.imagen.url}}" width="100" height="100">
+		<h3 class="fw-bold">
+		<a href="{% url 'noticias:detalle' noti.pk %}">{{noti.titulo}}</a>
+		</h3>	
 		
-		<p><a href="{% url 'noticias:detalle' noti.pk %}">TITULO: {{noti.titulo}}</a></p>
-		
-		<p>FECHA: {{noti.fecha}}</p>
-		<p>CATEGORIA: {{noti.categoria_noticia}}</p>
-		<p>CUERPO: {{noti.cuerpo}}</p>
+		<p class="text-muted">{{noti.fecha}}</p>
+		<p class="text-muted">{{noti.categoria_noticia}}</p>
+		<p class="text-muted">{{noti.cuerpo}}</p>
 		<br><br>
+	</div>
 	{% endfor %}
 {% endblock contenido %}
 

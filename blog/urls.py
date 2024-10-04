@@ -34,7 +34,8 @@ urlpatterns = [
 
     #LOGIN
     path('login/',auth.LoginView.as_view(template_name='usuarios/login.html'),name='login'),
-    path('logout/',auth.LogoutView.as_view(),name="logout"),
+    path('logout/',auth.LogoutView.as_view(template_name='usuarios/logout.html'),name='logout'),
+    path('registro/',auth.LoginView.as_view(template_name='usuarios/registro.html'),name='registro'),
 
     # URL DE APLICACION
     path('noticias/', include('apps.noticias.urls')),
