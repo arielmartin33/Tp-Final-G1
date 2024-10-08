@@ -1,2 +1,6 @@
 db.sqlite3
 ve/
+
+# Ignorar archivos compilados de Python
+*.pyc
+__pycache__/
