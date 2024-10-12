@@ -22,6 +22,9 @@ from django.contrib.auth import views as auth
 from django.conf import settings
 from django.conf.urls.static import static
 
+#URL Logout
+from .views import logout_view
+
 urlpatterns = [
 
     path('admin/', admin.site.urls),
@@ -36,6 +39,9 @@ urlpatterns = [
     path('login/',auth.LoginView.as_view(template_name='usuarios/login.html'),name='login'),
     path('logout/',auth.LogoutView.as_view(template_name='usuarios/logout.html'),name='logout'),
     path('registro/',auth.LoginView.as_view(template_name='usuarios/registro.html'),name='registro'),
+
+    #Logout
+    path('logout/', logout_view, name='logout'),
 
     # URL DE APLICACION
     path('noticias/', include('apps.noticias.urls')),
