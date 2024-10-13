@@ -38,7 +38,9 @@ urlpatterns = [
     path('registro/',auth.LoginView.as_view(template_name='usuarios/registro.html'),name='registro'),
 
     # URL DE APLICACION
-    path('noticias/', include('apps.noticias.urls')),
+    path('noticias/',include('apps.noticias.urls')),
     path('usuario/',include('apps.usuarios.urls')),
+    path('contacto/', include('apps.contacto.urls', namespace='contacto')),
+    # path('contacto/',include('apps.contacto.urls')),
+    # path('contacto/', include(('contacto.urls', 'contacto'), namespace='contacto')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
