@@ -22,6 +22,9 @@ from django.contrib.auth import views as auth
 from django.conf import settings
 from django.conf.urls.static import static
 
+#URL Logout
+from .views import logout_view
+
 urlpatterns = [
 
     path('admin/', admin.site.urls),
@@ -30,14 +33,20 @@ urlpatterns = [
     # 3 ES EL NOMBRE LA URL (aun no lo usamos)
     path('', views.Home, name = 'home'),
     #No necesariamente estos 3 valores (parametors) se deben llamar igual
-    path('Nosotros/', views.Nosotros, name = 'nosotros'),
+    path('nosotros/', views.Nosotros, name = 'nosotros'),
 
     #LOGIN
     path('login/',auth.LoginView.as_view(template_name='usuarios/login.html'),name='login'),
-    path('logout/',auth.LogoutView.as_view(),name="logout"),
+    path('logout/',auth.LogoutView.as_view(template_name='usuarios/logout.html'),name='logout'),
+    path('registro/',auth.LoginView.as_view(template_name='usuarios/registro.html'),name='registro'),
+
+    #Logout
+    path('logout/', logout_view, name='logout'),
 
     # URL DE APLICACION
-    path('Noticias/', include('apps.noticias.urls')),
-    path('Usuario/',include('apps.usuarios.urls')),
+    path('noticias/',include('apps.noticias.urls')),
+    path('usuario/',include('apps.usuarios.urls')),
+    path('contacto/', include('apps.contacto.urls', namespace='contacto')),
+    # path('contacto/',include('apps.contacto.urls')),
+    # path('contacto/', include(('contacto.urls', 'contacto'), namespace='contacto')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-

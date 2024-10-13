@@ -1,11 +1,20 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags%}
 
 {% block contenido %}
-			<form method="POST">{%csrf_token%}
-				{{form.errors}}
-				<input type="text" name="username" placeholder="USUARIO">
-				<input type="password" name="password" placeholder="PASSWORD">
+    <div class="row">
+      <div class="col-11 col-md-4 mx-auto mt-5">
+        <h1>Ingresar</h1>
+        <form action="" method="post">
+          {% csrf_token %}         
+          {{ form|crispy }}
+          <button class="btn btn-secondary" type="submit">Ingresar</button>
+        </form>
+        <div class="pt-3">
+          <small class="text-muted">No tiene Cuenta? <a href="{% url 'usuarios:registro' %}" class="ml-2">Registrarse</a> </small>
+        </div>
+      </div>
+    </div>
+    
+{% endblock contenido %}
 
-				<input type="submit" name="" value="ENVIAR">
-			</form>
-{% endblock %}
