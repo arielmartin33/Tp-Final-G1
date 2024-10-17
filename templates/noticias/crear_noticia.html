@@ -2,10 +2,17 @@
 {% load crispy_forms_tags %}
 {% load static %}
 
-{% block titulo %}CREAR NOTICIAS{% endblock titulo %}
+{% block titulo %}Crear Noticia{% endblock titulo %}
 
 
 {% block contenido %}
+    <div class="row">
+        <div class="col-11 col-md-4 mx-auto mt-5">
+            <h2>Nueva Categoria</h2>
+            <a href="{% url 'noticias:crear_categoria' %}">Crear nueva categoria</a>
+        </div>
+    </div>
+
 	<div class="row">
         <div class="col-11 col-md-4 mx-auto mt-5">
             <h2>Nueva Noticia</h2>

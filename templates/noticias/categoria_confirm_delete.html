@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<center>
+    <div class="col-11 mx-md-auto">
+        <h2>Eliminar Categoria</h2>
+        <br>
+        <p>Esta seguro de eliminar categoria "{{ object.nombre }}" ?</p>
+        <form method="POST">
+            {% csrf_token %}
+            <input type="submit" value="Si, elminar">
+            <a href="{% url 'apps.noticias:categoria_list %}">No, Cancelar</a>
+        </form>
+        
+    </div>
+</center>
+{% endblock %}

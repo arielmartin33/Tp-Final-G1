@@ -32,6 +32,7 @@ urlpatterns = [
     # 2 LA VISTA QUE VA EJECUTAR
     # 3 ES EL NOMBRE LA URL (aun no lo usamos)
     path('', views.Home, name = 'home'),
+    path('', include('django.contrib.auth.urls')),
     #No necesariamente estos 3 valores (parametors) se deben llamar igual
     path('nosotros/', views.Nosotros, name = 'nosotros'),
 
