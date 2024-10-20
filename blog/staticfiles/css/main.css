@@ -1,0 +1,48 @@
+
+.contenedor{
+	background-color: aqua;
+}
+
+.centrar{
+	text-align: center;
+}
+
+.bloque{
+	text-align: center;
+	padding: 100px;
+}
+
+.submenu{
+	font-size: 18px	;
+}
+
+
+/* Estilos para la sección "Nosotros" */
+.seccion-nosotros .about-section {
+    padding: 50px;
+    background-color: #f5f5f5;
+    max-width: 1200px; /* Para evitar que el contenido se desborde */
+    margin: auto;      /* Centrar el contenido en la página */
+}
+
+.seccion-nosotros .about-container {
+    display: flex;
+    flex-wrap: wrap;    /* Permitir que el contenido se ajuste en pantallas pequeñas */
+    justify-content: space-between;
+    align-items: flex-start; /* Alinea la parte superior de la imagen y el texto */
+    gap: 20px;
+}
+
+.seccion-nosotros .about-text {
+    flex: 1;
+    padding-right: 20px;
+    max-width: 600px;   /* Limitar el ancho del texto */
+}
+
+.nosotros-image {
+    max-width: 300px;  /* Ancho máximo de la imagen */
+    width: 100%;       /* Asegurar que se ajuste a su contenedor */
+    height: auto;      /* Mantener la proporción */
+    float: left;       /* Flotar la imagen a la izquierda del texto */
+    margin-right: 20px; /* Añadir un margen entre la imagen y el texto */
+}
