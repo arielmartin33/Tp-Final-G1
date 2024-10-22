@@ -1,13 +1,15 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load colaborador_tags %}
 
 {% block titulo %}NOTICIAS{% endblock titulo %}
 
 
 {% block contenido %}
 	<div class="submenu">
-
+		{% if user.is_superuser or request.user|has_group:"Colaborador" %}
 		<a href="{% url 'noticias:crear_noticia' %}">Nueva</a>
+		{% endif %}
 		<a href="{% url 'noticias:listar' %}">Todas</a>
 		{% for cat in categorias %}
 			<a href="?id={{cat.pk}}">{{cat.nombre}}</a>

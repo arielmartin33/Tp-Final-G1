@@ -5,6 +5,140 @@
 
 
 {% block contenido %}
-	<h2>HOLA SOY EL HOME CON UN CAMBIO</h2>
+	<!DOCTYPE html>
+	<html lang="es-ar">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Document</title>
+		
+	</head>
+	<body style="
+	background-image: url(https://cdn.pixabay.com/photo/2024/10/08/02/15/ai-generated-9104187_1280.jpg);
+	display: flexbox;
+	background-size: cover;
+	">
+		<header>
+			<!---- Se agrega titulo al Blog -->
+			<H1 class="text-white" style="text-align: center; margin-top: 10px; font-style: initial; background-color: midnightblue;">¡Bienvenidos A Nuestro Blog Sobre La Inteligencia Artificial!</H1>
+		</header>
+		<!-- Div central para la imagen de fondo, a corregir que sea la totalidad de la pagina-->
+<div class="d-flex flex-column align-items-center">		
+	<div class="caja" style="
+        flex: 1;
+        background-color: azure;
+        border: 4px solid;
+        margin: 20px; /* Separación de 1px entre las cajas */
+        padding: 40px;
+        border-radius: 20px;" >
+
+		<!-- pequeña introduccion con un link a Noticias (se le agrega boton interactivo) -->
+		<article>
+			<H2 style="text-align: center; font-family: fantasy;">¿De qué trata nuestro Blog?</H2>
+			<p style="text-align: center;font-size: 17px; font-family: Arial, Helvetica, sans-serif;">Nuestro Blog está pensado para aquellos entusiastas de la Inteligencia Artificial que quieran matenerse informados<br>
+				 con las últimas noticias e innovaciones de su desarrollo.<br>
+				 Aquí no solo podrás leer y escribir comentarios, sino también crear tus propias publicaciones y debatir<br>
+				  con los demás usuarios, ¡te invitamos a compartir tus conocimientos e ideas!</p>
+
+		<!-- Se agrega pequeño botonlink para ir a noticias-->
+
+		 <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align: center;">¡Accede a las ultimas noticias!</p>
+		 <div class="d-flex justify-content-center">
+			<a href="{% url 'noticias:listar' %}">
+				<button type="button" class="btn btn-outline-danger">
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-newspaper" viewBox="0 0 16 16">
+						<path d="M0 2.5A1.5 1.5 0 0 1 1.5 1h11A1.5 1.5 0 0 1 14 2.5v10.528c0 .3-.05.654-.238.972h.738a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 1 1 0v9a1.5 1.5 0 0 1-1.5 1.5H1.497A1.497 1.497 0 0 1 0 13.5zM12 14c.37 0 .654-.211.853-.441.092-.106.147-.279.147-.531V2.5a.5.5 0 0 0-.5-.5h-11a.5.5 0 0 0-.5.5v11c0 .278.223.5.497.5z"></path>
+						<path d="M2 3h10v2H2zm0 3h4v3H2zm0 4h4v1H2zm0 2h4v1H2zm5-6h2v1H7zm3 0h2v1h-2zM7 8h2v1H7zm3 0h2v1h-2zm-3 2h2v1H7zm3 0h2v1h-2zm-3 2h2v1H7zm3 0h2v1H7zm-3 0h2v1H7z"></path>
+					</svg> 
+					Noticias
+				</button>
+			</a>
+		</div>
+		</article>
+		
+	
+	</div>
+	<div class="caja" style="
+        max-width: 600px;
+        background-color: azure;
+        border: 6px solid;
+        margin: 20px; /* Separación de 1px entre las cajas */
+        padding: 30px;
+        border-radius: 20px;" >
+		<!-- diseño de box experimental -->
+		<article>
+			<H2 style="text-align: center; font-family: fantasy;">¿Qué es la Inteligencia Artificial?</H2>
+			<p style="text-align: center; font-family: Arial, Helvetica, sans-serif;">La inteligencia artificial (IA) es un campo de la informática que se centra en crear sistemas capaces de realizar tareas que normalmente requieren inteligencia humana.
+				 Esto incluye habilidades como el aprendizaje, el razonamiento, la resolución de problemas, la comprensión del lenguaje y la percepción visual. La IA puede clasificarse
+				  en dos tipos: la IA débil, diseñada para tareas específicas, y la IA fuerte, que aspira a replicar la inteligencia humana en un sentido más amplio. La IA se aplica en
+				  diversas áreas, desde asistentes virtuales y chatbots hasta sistemas de recomendación y diagnóstico médico, transformando la manera en que interactuamos con la tecnología.</p>
+		</article>
+	    <!-- diseño de noticia mostrada en home -->
+	</div>
+    </div>
+
+</div>
+
+  <footer>
+
+	<!-- Footer con algunos contactos -->
+<div class="container d-flex align-items-center" style="background-color: bisque; border: 3px solid; border-radius: 20px; max-width: 28cm;">
+
+		  <!-- Separador para el footer -->
+	  <div class="cajafooter" 
+     style="
+     top: 2px;
+	 margin-left: auto;
+	 margin-right: auto;
+     margin-bottom: 20px;
+     margin-top: 20px;
+     ">
+    	
+    
+    		<ul style="list-style: none; display: inline-flex;">
+        <!-- Noticias -->
+        		<li style="margin-right: 3px;">
+            		<a href="{% url 'noticias:listar' %}">
+                		<button type="button" class="btn btn-success">
+                    		<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-newspaper" viewBox="0 0 16 16">
+								<path d="M0 2.5A1.5 1.5 0 0 1 1.5 1h11A1.5 1.5 0 0 1 14 2.5v10.528c0 .3-.05.654-.238.972h.738a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 1 1 0v9a1.5 1.5 0 0 1-1.5 1.5H1.497A1.497 1.497 0 0 1 0 13.5zM12 14c.37 0 .654-.211.853-.441.092-.106.147-.279.147-.531V2.5a.5.5 0 0 0-.5-.5h-11a.5.5 0 0 0-.5.5v11c0 .278.223.5.497.5z"/>
+								<path d="M2 3h10v2H2zm0 3h4v3H2zm0 4h4v1H2zm0 2h4v1H2zm5-6h2v1H7zm3 0h2v1h-2zM7 8h2v1H7zm3 0h2v1h-2zm-3 2h2v1H7zm3 0h2v1h-2zm-3 2h2v1H7zm3 0h2v1h-2z"/>
+							  </svg>
+                    Noticias
+                		</button>	
+            		</a>
+        		</li>
+        <!-- Acerca de nosotros -->
+        <li style="margin-right: 3px;">
+            <a href="{% url 'nosotros' %}">
+                <button type="button" class="btn btn-primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-person-fill" viewBox="0 0 16 16">
+						<path d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2m-1 7a3 3 0 1 1-6 0 3 3 0 0 1 6 0m-3 4c2.623 0 4.146.826 5 1.755V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-1.245C3.854 11.825 5.377 11 8 11"/>
+					  </svg>
+                    Acerca de nosotros
+                </button>
+            </a>
+        </li>
+        <!-- Contacto-->
+        <li>
+            <a href="{% url 'contacto:contacto' %}">
+                <button type="button" class="btn btn-outline-danger">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-paper-fill" viewBox="0 0 16 16">
+						<path fill-rule="evenodd" d="M6.5 9.5 3 7.5v-6A1.5 1.5 0 0 1 4.5 0h7A1.5 1.5 0 0 1 13 1.5v6l-3.5 2L8 8.75zM1.059 3.635 2 3.133v3.753L0 5.713V5.4a2 2 0 0 1 1.059-1.765M16 5.713l-2 1.173V3.133l.941.502A2 2 0 0 1 16 5.4zm0 1.16-5.693 3.337L16 13.372v-6.5Zm-8 3.199 7.941 4.412A2 2 0 0 1 14 16H2a2 2 0 0 1-1.941-1.516zm-8 3.3 5.693-3.162L0 6.873v6.5Z"/>
+					  </svg>
+                    Contacto
+                </button>
+            </a>
+        </li>
+    </ul>
+	</div>
+</div>
+<div>
+	<h6 style="text-align: center; margin-bottom: -30px;">  © 2024 Blog de Inteligencia Artificial - Todos los Derechos Reservados.</h6>	
+</div>
+	
+  </footer>
+	</body>
+	</html>
 {% endblock contenido %}
 

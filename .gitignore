@@ -1,6 +1,10 @@
 db.sqlite3
 ve/
+env/
+__pycache__/
+ev/
 
 # Ignorar archivos compilados de Python
 *.pyc
 __pycache__/
+
