@@ -8,3 +8,5 @@ ev/
 *.pyc
 __pycache__/
 
+media/noticias/maxresdefault.jpg
+
