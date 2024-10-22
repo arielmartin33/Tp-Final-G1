@@ -1,13 +1,11 @@
 from django import forms
-from .models import Categoria, Noticia
+from .models import Categoria, Noticia, Comentario
 
-class CategoriaForm(forms.ModelForm):
+class NuevaCategoriaForm(forms.ModelForm):
     class Meta:
         model = Categoria
-        fields = ['nombre']
-        # widgets = {
-        #     'nome': forms.TextInput(attrs={'class': 'form-control'}),
-        # }
+        fields = '__all__'
+      
 
 class NoticiaForm(forms.ModelForm):
     class Meta:
@@ -18,3 +16,8 @@ class NoticiaForm(forms.ModelForm):
         #     'contenido': forms.Textarea(attrs={'class': 'form-control'}),
         #     'categoria': forms.Select(attrs={'class': 'form-control'}),
         # }
+
+class ComentarioForm(forms.Form):
+    class Meta:
+        model = Comentario
+        fields = ['texto']
