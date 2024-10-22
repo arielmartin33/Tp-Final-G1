@@ -17,7 +17,8 @@ class NoticiaForm(forms.ModelForm):
         #     'categoria': forms.Select(attrs={'class': 'form-control'}),
         # }
 
-class ComentarioForm(forms.Form):
+class ComentarioForm(forms.ModelForm):
     class Meta:
         model = Comentario
         fields = ['texto']
+
